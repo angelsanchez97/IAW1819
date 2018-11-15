@@ -1,10 +1,10 @@
 package ejercicios;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
+//import java.util.InputMismatchException;
+//import java.util.Scanner;
 
 public class Teoria {
-	private static Scanner sc = new Scanner(System.in);
+	//private static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
 		
 //			int valor = 100/0;
