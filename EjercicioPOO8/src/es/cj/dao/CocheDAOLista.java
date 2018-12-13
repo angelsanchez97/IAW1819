@@ -2,6 +2,7 @@ package es.cj.dao;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import es.cj.beam.Coche;
 
@@ -23,44 +24,66 @@ public class CocheDAOLista implements CocheDAO {
 		for (Coche c : listacoche) {
 			if (c.equals(oldcar)) {
 				listacoche.set(i, newcar);
-				i++;
-			}
+				
+			}i++;
 		}
 	}
 
 	@Override
 	public void velocidad(Coche c, int velocidad) {
-		// TODO Auto-generated method stub
-
+		for (Coche v_coche : listacoche) {
+			if (v_coche.equals(c)) {
+				v_coche.setVelocidad(velocidad);
+			}
+		}
 	}
 
 	@Override
 	public boolean borrar(String nombre, String marca) {
-		// TODO Auto-generated method stub
+		for (Coche v_coche : listacoche) {
+			if (v_coche.getNombre().equals(nombre) && v_coche.getMarca().equals(marca)) {
+				listacoche.remove(v_coche);
+			}
+		}
 		return false;
 	}
 
 	@Override
 	public boolean borrartodos() {
-		// TODO Auto-generated method stub
-		return false;
+		return listacoche.removeAll(listacoche);
 	}
 
 	@Override
 	public void buscarCochesPrecio(double precio) {
-		// TODO Auto-generated method stub
+		for (Coche v_coche : listacoche) {
+			if (v_coche.getPrecio() == precio) {
+				System.out.println(v_coche);
+			}
+			else{
+				System.out.println("No hay coches que tengan ese precio.");
+			}
+		}
 
 	}
 
 	@Override
 	public void buscarCochesAnyosFabric(int anyo_in, int anyo_fin) {
-		// TODO Auto-generated method stub
+		for (Coche v_coche : listacoche) {
+			if (anyo_in < v_coche.getAnyo_fabricacion() && v_coche.getAnyo_fabricacion() < anyo_fin) {
+				System.out.println(v_coche);
+			}
+			else{
+				System.out.println("No hay coches entre esa fecha.");
+			}
+		}
 
 	}
 
 	@Override
 	public void listar() {
-		// TODO Auto-generated method stub
+		for (Coche v_coche : listacoche) {
+				System.out.println(v_coche);
+		}
 
 	}
 

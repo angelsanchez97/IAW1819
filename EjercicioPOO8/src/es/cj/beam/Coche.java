@@ -6,6 +6,7 @@ public class Coche {
 	private double precio;
 	private String nombre;
 	private String marca;
+	
 	public Coche() {
 		super();
 		// TODO Auto-generated constructor stub
